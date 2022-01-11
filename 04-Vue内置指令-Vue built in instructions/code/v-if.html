@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../../vue.js" type="text/javascript" charset="utf-8"></script>
+	<title>V-if</title>
+</head>
+<body>
+	<div id="root">
+		<h1 v-if="none">此文字不存在于DOM之中</h1>
+		<h1 v-if="display">此文字存在于DOM之中</h1>
+	</div>
+	
+	<script type="text/javascript">
+		new Vue({
+			el: "#root",
+			data: {
+				none: false,
+				display: true
+			}
+		})
+	</script>
+</body>
+</html>

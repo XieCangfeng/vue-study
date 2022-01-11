@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../../vue.js" type="text/javascript" charset="utf-8"></script>
+	<title>V-else-if</title>
+</head>
+<body>
+	<div id="root">
+		<div v-if="msg==='A'">数据是A</div>
+		<div v-else-if="msg==='B'">数据是B</div>
+		<div v-else-if="msg==='C'">数据是C</div>
+		<div v-else>ABC都不是</div>
+	</div>
+	
+	<script type="text/javascript">
+		new Vue({
+			el: "#root",
+			data: {
+				msg: "D"
+			}
+		})
+	</script>
+</body>
+</html>

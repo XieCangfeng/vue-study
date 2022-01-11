@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../../vue.js" type="text/javascript" charset="utf-8"></script>
+	<title>V-bind</title>
+</head>
+<body>
+	<div id="root">
+		<div id="">
+			<button type="button" @click="randomImg()">点击随机切换图片</button>
+		</div>
+		<img v-bind:src="imgSrc" >
+	</div>
+	
+	<script type="text/javascript">
+		new Vue({
+			el: "#root",
+			data: {
+				imgArr: [
+					"https://t7.baidu.com/it/u=2621658848,3952322712&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=3631608752,3069876728&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=2235903830,1856743055&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=801209673,1770377204&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=1635608122,693552335&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=774679999,2679830962&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=1010739515,2488150950&fm=193&f=GIF",
+					"https://t7.baidu.com/it/u=1972611367,1123866192&fm=193&f=GIF"
+				],
+				imgSrc: "https://t7.baidu.com/it/u=2646899128,380997184&fm=193&f=GIF"
+			},
+			methods: {
+				randomImg: function() {
+					this.imgSrc = this.imgArr[Math.floor(Math.random()*8)]
+				}
+			}
+		})
+	</script>
+</body>
+</html>

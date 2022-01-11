@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../../vue.js" type="text/javascript" charset="utf-8"></script>
+	<title>V-model</title>
+</head>
+<body>
+	<div id="root">
+		
+		<h1>文本</h1>
+		<input v-model="textMsg">
+		<p>用户输入的是:  {{textMsg}}</p>
+		
+		<hr >
+		
+		<h1>单个复选框</h1>
+		<input type="checkbox" id="check1" v-model="checkData">
+		<label for="check1">{{checkData}}</label>
+		
+		<hr >
+		
+		<h1>多个复选框</h1>
+		<input type="checkbox" id="ck01" v-model="ckArr" value="banana">
+		<label for="ck01">Banana</label>
+		<input type="checkbox" id="ck02" v-model="ckArr" value="apple">
+		<label for="ck02">apple</label>
+		<input type="checkbox" id="ck03" v-model="ckArr" value="orange">
+		<label for="ck03">orange</label>
+		<input type="checkbox" id="ck04" v-model="ckArr" value="lemon">
+		<label for="ck04">lemon</label>
+		<p>用户选择的有：{{ckArr}}</p>
+		
+		<hr >
+		
+		<h1>单选按钮</h1>
+		<div>
+		    <input type="radio" id="male" value="male" v-model="picked">
+		    <label for="male">male</label>
+		    <input type="radio" id="female" value="female" v-model="picked"> 
+		    <label for="female">female</label>
+		    <h2>picked: {{picked}}</h2>
+		</div>
+		
+		<h1>下拉菜单(单选)</h1>
+		<select v-model="selected">
+		  <option disabled value="">请选择</option>
+		  <option>A</option>
+		  <option>B</option>
+		  <option>C</option>
+		</select>
+		<p>用户选择的有：{{ selected }}</p>
+		
+		<hr >
+		
+		<h1>下拉菜单(多选)</h1>
+		<select v-model="selecteds" multiple style="width: 50px;">
+		  <option>A</option>
+		  <option>B</option>
+		  <option>C</option>
+		</select>
+		<br>
+		<p>用户选择的有：{{ selecteds }}</p>
+	</div>
+	
+	<script type="text/javascript">
+		let vm = new Vue({
+			el:"#root",
+			data: {
+				textMsg: "",
+				checkData: false,
+				ckArr: [],
+				picked: "",
+				selected: "",
+				selecteds: []
+				
+			}
+		})
+		
+		
+	</script>
+</body>
+</html>

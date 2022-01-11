@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="../../vue.js" type="text/javascript" charset="utf-8"></script>
+	<title>V-for</title>
+</head>
+<body>
+	<div id="root">
+		<ul>
+			<li v-for="(value, index) in array">{{index+1}}: {{value}}</li>
+		</ul>
+		<hr >
+		<ul>
+			<li v-for="(value, key, index) in object">{{index+1}}: {{key}}-{{value}}元/斤</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+		new Vue({
+			el: "#root",
+			data: {
+				array: [
+					"番茄",
+					"黄瓜",
+					"胡罗卜",
+					"卷心菜",
+					"土豆",
+					"歪瓜"
+				],
+				object: {
+					"西瓜": 9.9,
+					"橙子": 12.8,
+					"柚子": 14.3,
+					"桃桃": 6.7,
+					"苹果": 5.5
+				}
+			}
+		})
+	</script>
+</body>
+</html>
